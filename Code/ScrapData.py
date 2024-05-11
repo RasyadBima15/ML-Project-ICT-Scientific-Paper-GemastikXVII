@@ -17,8 +17,7 @@ browser_options.add_argument('disable-notification')
 browser_options.add_argument('--disable-infobars')
 browser_options.add_argument('--start-maximized')
 
-service = Service(executable_path="msedgedriver.exe")
-
+service = Service(executable_path="Driver\msedgedriver.exe")
 
 driver = webdriver.Edge(service=service)
 driver.get("https://www.tiktok.com")
