@@ -17,7 +17,7 @@ browser_options.add_argument('disable-notification')
 browser_options.add_argument('--disable-infobars')
 browser_options.add_argument('--start-maximized')
 
-service = Service(executable_path="Driver\msedgedriver.exe")
+service = Service(executable_path="msedgedriver.exe")
 
 driver = webdriver.Edge(service=service)
 driver.get("https://www.tiktok.com")
@@ -26,6 +26,7 @@ search = "jokowi"
 
 time.sleep(5)  
 
+#usahakan cepat login ke akun guest
 i = 0
 while i < 1 :
     try :
