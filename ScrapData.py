@@ -22,7 +22,7 @@ service = Service(executable_path="msedgedriver.exe")
 driver = webdriver.Edge(service=service)
 driver.get("https://www.tiktok.com")
 
-search = "jokowi"
+search = "kenaikan ukt"
 
 time.sleep(5)  
 
@@ -49,7 +49,7 @@ while ii < 1 :
         video.click()
         time.sleep(2)
 
-        elementPost = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/div[1]")))
+        elementPost = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/div[3]")))
         elementPost.click()
         time.sleep(2)
         ii = 1
@@ -61,8 +61,8 @@ time.sleep(2)
 
 #scroll comment
 elementComment = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[1]/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div[1]/div[1]")
-for i in range(7000) :
-    print("lagi scrolling")
+for i in range(1500) :
+    print(f"lagi scrolling {i}")
     driver.execute_script("arguments[0].scrollIntoView();", elementComment)
     
 
@@ -100,12 +100,12 @@ dict_data = dict(zip(
 # with open('dataTiktok.json', 'w') as fp:
 #     json.dump(dict_data, fp)
 
-df = pd.read_csv("ScrapeDataFromTiktok.csv")
+# df = pd.read_csv("ScrapeDataFromTiktokNew.csv")
 df_new = pd.DataFrame(data=dict_data)
 # df.head()
 
-df_concatenated = pd.concat([df, df_new], ignore_index=True)
-df_concatenated.to_csv("ScrapeDataFromTiktok.csv", index=False, mode='a', header=False)
+# df_concatenated = pd.concat([df, df_new], ignore_index=True)
+df_new.to_csv("ScrapeDataFromTiktok.csv", index=False, mode='a', header=False)
 
 print()
 print()
